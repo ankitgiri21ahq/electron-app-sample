@@ -13,7 +13,12 @@ npm start
 npm run electron
 ```
 
-# to create exe or dmg
+# to create static files
 ```
 npm run build
+```
+
+# to create electron app (exe or dmg)
+```
+npm run dist
 ```
