@@ -12,3 +12,8 @@ npm start
 ```
 npm run electron
 ```
+
+# to create exe or dmg
+```
+npm run build
+```
