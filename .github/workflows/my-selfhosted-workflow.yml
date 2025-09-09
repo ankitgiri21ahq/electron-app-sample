@@ -1,0 +1,39 @@
+name: Build React + Electron App
+
+on:
+  workflow_dispatch:   # run manually from GitHub
+
+jobs:
+  build:
+    runs-on: [self-hosted, macos1]
+
+    env:
+      NODE_VERSION: 22
+      OUTPUT_PATH: ./dist   # where electron builder outputs app
+
+    steps:
+      # Step 1: Checkout code from repo
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Build React static files
+      - name: Build React App
+        run: npm run build
+
+      # Step 5: Build Electron app (DMG/EXE)
+      - name: Build Electron App
+        run: npm run dist
+
+      # Step 6: Verify output
+      - name: List Build Output
+        run: ls -la ${{ env.OUTPUT_PATH }}
