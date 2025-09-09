@@ -1,0 +1,16 @@
+name: Test Runner
+
+on:
+  push:        # runs whenever you push code
+  pull_request: # also runs when PRs are opened/updated
+
+jobs:
+  test:
+    runs-on: [self-hosted, macos1]   # must match your runner labels
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Say hello
+        run: echo "✅ Hello from self-hosted runner on Mac!"
+
