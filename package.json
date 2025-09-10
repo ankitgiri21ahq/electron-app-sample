@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "main": "electron.js",
+  "description": "A sample React + Electron desktop application",
+  "author": "Your Name <youremail@example.com>",
+
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -11,6 +14,7 @@
     "electron": "electron .",
     "dist": "electron-builder"
   },
+
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
@@ -21,17 +25,20 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+
   "devDependencies": {
     "electron": "^38.0.0",
     "electron-builder": "^26.0.12",
     "electron-is-dev": "^3.0.1"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
     ]
   },
+
   "browserslist": {
     "production": [
       ">0.2%",
@@ -44,11 +51,19 @@
       "last 1 safari version"
     ]
   },
+
   "build": {
     "appId": "com.example.myapp",
     "productName": "My Electron App",
     "directories": {
       "output": "dist"
+    },
+    "files": [
+      "build/**/*",
+      "electron.js"
+    ],
+    "mac": {
+      "target": "dmg"
     }
   }
 }
