@@ -58,12 +58,9 @@
     "directories": {
       "output": "dist"
     },
-    "files": [
-      "build/**/*",
-      "electron.js"
-    ],
     "mac": {
       "target": "dmg"
-    }
+    },
+    "publish": "never"
   }
 }
