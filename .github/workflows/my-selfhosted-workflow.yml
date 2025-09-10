@@ -37,3 +37,10 @@ jobs:
       # Step 6: Verify output
       - name: List Build Output
         run: ls -la ${{ env.OUTPUT_PATH }}
+
+      # Step 7: Upload the .dmg as an artifact
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-dmg
+          path: ${{ env.OUTPUT_PATH }}/*.dmg
